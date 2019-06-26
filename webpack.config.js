@@ -1,6 +1,6 @@
 const path = require('path');
 // 如果要配置插件，需要在导出的对象中，挂载一个 plugins 节点
-var htmlWebpackPlugin = require('html-webpack-plugin')
+// var htmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 
@@ -14,11 +14,13 @@ module.exports = {
     },
     plugins: [
         // 所有webpack插件的配置节点
-        new htmlWebpackPlugin({
-            template: path.join(__dirname, './src/index.html'), // 指定模板文件路径
-            filename: 'index.html' // 设置生成的内存页面的名称
-        }),
-        new VueLoaderPlugin()
+        /*      new htmlWebpackPlugin({
+                 template: path.join(__dirname, './src/index.html'), // 指定模板文件路径
+                 filename: 'index.html' // 设置生成的内存页面的名称
+             }), */
+        new VueLoaderPlugin(),
+        // 创建一个在内存中生成hrtml的页面的插件
+
     ],
     module: { // 配置所有第三方loader 模块的
         rules: [ // 第三方模块的匹配规则
